@@ -1,0 +1,46 @@
+#AI-1
+#DFS
+graph={
+    'A':['C','D','B'],
+    'C':['E'],
+    'D':['F'],
+    'B':[],
+    'E':[],
+    'F':[]
+}
+v=set()
+def dfs(v,graph,node):
+    if node not in v:
+        print(node)
+        v.add(node)
+        for i in graph[node]:
+            dfs(v,graph,i)
+            
+dfs(v,graph,'A')       
+
+#BFS
+graph={
+    'A':['C','D','B'],
+    'C':['E'],
+    'D':['F'],
+    'B':[],
+    'E':[],
+    'F':[]
+}
+v=[]
+q=[]
+
+def bfs(v,graph,node):
+    v.append(node)
+    q.append(node)
+    
+    while q:
+        m=q.pop(0)
+        print(m)
+        for i in graph[m]:
+            if i not in v:
+                v.append(i)
+                q.append(i)
+                
+                
+bfs(v,graph,'A')   

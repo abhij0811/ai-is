@@ -1,0 +1,72 @@
+#AI-5
+def chatbot():
+    print("hi! i am chatbot how i can help you today")
+    while True:
+        user=input("YOU: ")
+        if user.lower()=="bye":
+            print("Chatbot: Good Bye..")
+            break
+        elif user.lower()=="hello":
+            print("Chatbot: hello there how are you")
+        elif user.lower()=="how are you":
+            print("Chatbot: i am fine,thanks for asking..")
+        else:
+            print("sorry! i cant understand.")
+   
+    
+chatbot() 
+
+
+
+
+
+----------------------------
+import random
+
+# Define some responses for the chatbot
+responses = {
+    "hi": ["->Hello! how can i assist you", "->Hi there!", "->Hey!"],
+    
+    "i need help": ["->Of course!What do you need help with"],
+    
+    "i want to place an order": ["->Great! What would you like to order?"],
+    
+    "what is your return policy": ["-> Our return policy is product must not be damage,product must be same as we send you.Is there anything else you need help with?"],
+    
+    "i want to do enquiry": ["->Of course!What is it"],
+    
+    "do you have iphone 14": ["->Of course!Which varient and color"],
+    
+    "256gb and white in color": ["->Great Choice!"],
+    
+    "what is price": ["->1,20,000"],
+    
+    "i need to order it": ["->Please provide your address,Phone NO."],
+    
+    "pune,1234567890": ["->what is payment mode."],
+    
+    "cash on delivery": ["->ok thanks for order"],
+    
+    
+    "how are you": ["->I'm doing well, thank you!", "->I'm fine, thanks for asking.", "->Pretty good!"],
+    
+    "default": ["->I'm sorry, I didn't understand what you said.", "->Can you please rephrase that?", "->I'm not sure what you mean."]
+}
+
+# Define a function to respond to user input
+def chatbot_response(user_input):
+    if user_input.lower() in responses:
+        return random.choice(responses[user_input.lower()])
+    else:
+        return random.choice(responses["default"])
+
+# Chat with the user
+print("Hi, I'm a simple chatbot. What can I help you with today?")
+while True:
+    user_input = input()
+    if user_input.lower() == "bye":
+        print("Goodbye!")
+        break
+    else:
+        print(chatbot_response(user_input))
+       
